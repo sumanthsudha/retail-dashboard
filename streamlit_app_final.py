@@ -77,7 +77,7 @@ if show_hypothesis:
     - T-Statistic: 11.598  
     - P-Value: 0.00000  
 
-    ✅ Result: Since p < 0.05, we reject H₀. Large orders do have significantly lower average unit prices.
+  Result: Since p < 0.05, we reject H₀. Large orders do have significantly lower average unit prices.
     """)
 
 # Recommendations Section
