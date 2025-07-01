@@ -20,6 +20,16 @@ By leveraging transactional sales data, the goal is to uncover patterns in bulk 
 ultimately supporting data-driven recommendations for pricing and promotional strategies.
 """)
 
+st.subheader("Data Processing Summary")
+st.markdown("""
+- Loaded the dataset from `BSS_Retail_Cleaned.csv`.
+- Converted `salesdate` to datetime format for filtering.
+- Removed rows where `unitsordered` was 0 to avoid division errors.
+- Calculated a new feature: `avg_price_per_unit = sales / unitsordered`.
+- Enabled filtering by a custom date range and hypothesis testing.
+""")
+
+
 # Sidebar filters
 st.sidebar.header("Filter Options")
 min_date = df['salesdate'].min().date()
