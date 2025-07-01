@@ -22,12 +22,23 @@ ultimately supporting data-driven recommendations for pricing and promotional st
 
 st.subheader("Data Processing Summary")
 st.markdown("""
-- Loaded the dataset from `BSS_Retail_Cleaned.csv`.
-- Converted `salesdate` to datetime format for filtering.
-- Removed rows where `unitsordered` was 0 to avoid division errors.
-- Calculated a new feature: `avg_price_per_unit = sales / unitsordered`.
-- Enabled filtering by a custom date range and hypothesis testing.
+- **Handled Missing Values**:
+  - Dropped columns with more than 30% missing data.
+  - Imputed missing values in numerical columns using the **median**.
+  - Imputed missing values in categorical columns using the **mode**.
+
+- **Handled Outliers**:
+  - Used the **Interquartile Range (IQR)** method to detect and optionally cap extreme values.
+  - Removed rows where `unitsordered` was 0 to avoid divide-by-zero errors.
+
+- **Feature Engineering**:
+  - Converted `salesdate` to datetime format for time-based filtering.
+  - Created `avg_price_per_unit = sales / unitsordered` to analyze pricing efficiency.
+
+- **Filtering Capabilities**:
+  - Enabled interactive filtering by **date range** and a toggle to view **hypothesis testing results**.
 """)
+
 
 
 # Sidebar filters
